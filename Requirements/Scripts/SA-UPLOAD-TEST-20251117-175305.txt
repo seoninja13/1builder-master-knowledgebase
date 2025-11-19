@@ -1,0 +1,11 @@
+
+This file was uploaded BY the service account at 2025-11-17T17:53:05.202187
+
+If this triggers a webhook notification but user-uploaded files don't,
+then we've found the issue: Google only sends notifications for changes
+made BY the authenticated account, not FOR files it has access to.
+
+This would mean we need to use a different approach:
+- Option 1: Use OAuth with user credentials instead of service account
+- Option 2: Use polling instead of push notifications
+- Option 3: Have users upload via an API that uses the service account
